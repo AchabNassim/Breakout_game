@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #005f8c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Electrolize', monospace;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h2 {
+	font-size: 30px;
+	color: white;
+	letter-spacing: 1px;
+}
+
+
+canvas {
+  background: white;
+  display: block;
+  border: 3px solid rgba(0,43,89,0.8);
+  border-radius: 7px;
+}
