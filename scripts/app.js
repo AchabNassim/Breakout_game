@@ -1,8 +1,8 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+
 let score = 0;
-let total = 0;
 let lives = 3;
 let paused = false;
 
@@ -48,7 +48,6 @@ for (let i = 0; i < brickRowCount; i++) {
       const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX;
       const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY;
       bricks[i][j] = { x, y, ...brickInfo  };
-      total += 1;
     } else {
       // else it returns it to the default value(1 life).
       brickInfo.visible = 1;
@@ -58,7 +57,6 @@ for (let i = 0; i < brickRowCount; i++) {
     }
   }
 }
-console.log(bricks);
 
 // drawing the elements
 function ballDraw(){
@@ -111,10 +109,6 @@ function drawLives(){
   ctx.shadowColor = 'transparent';
   ctx.font = '22px monospace';
   ctx.fillText(`lives: ${lives}`, canvas.width - 115, 45);
-}
-
-function updateScore (){
-  score++;
 }
 
 // returns a color depending on the state of the brick.
@@ -178,7 +172,7 @@ function moveBall (){
         ) {
           ball.dy *= -1;
           brick.visible--;
-          updateScore();
+          score++;
         }
       }
     });
@@ -202,7 +196,6 @@ function update (){
   if (!paused){
     movePaddle();
     moveBall();
-
     draw();
     // console.log("working");
   }  

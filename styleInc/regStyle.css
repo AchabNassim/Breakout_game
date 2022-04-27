@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #005f8c;	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Electrolize', monospace;
+	min-height: 80vh;
+	margin: 0;
+}
+
+h2 {
+	color: white;
+	margin: 20px;
+	font-size: 40px;
+	letter-spacing: 1px;
+	border-bottom: 3px solid #00b9be;	
+}
+
+#mark {
+	color: #00b9be;
+}
+
+#container {
+	min-height: 42vh;
+	padding: 15px;
+	background-color: white;
+	border: 2px solid #00b9be;
+	border-radius: 5px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.input {
+	font-size: 16px;
+  	margin: 6px;
+  	width: 400px;
+	height: 50px;
+	padding: 20px;
+	border-radius: 3px;
+	border : solid 2px #9ff4e5 ; 
+}
+
+.button {
+	text-align: center;
+	font-size: 16px;
+	background-color: #005f8c;
+	border: none;
+	color: white;
+	margin: 6px;
+ 	width: 192px;
+  height: 38px;
+  padding: 10px;
+  transition: ease-out 0.9s;
+}
+
+#login {
+	text-align: center;
+	font-size: 18px;
+	background-color: #005f8c;
+	border: none;
+	color: white;
+	margin: 6px;
+ 	width: 400px;
+  height: 42px;
+  padding: 12px;
+  transition: ease-out 0.9s;
+}
+
+.button:hover, #login:hover{
+  	box-shadow: inset 410px 0 0 0 #00b9be;
+  	color: white;
+}
+
+p {
+	color: red;
+	font-size: 14px;
+	margin: 10px;
+	text-align: center;
+}
+
+#create {
+	color: black;
+	font-size: 16px;
+	margin: 12px 6px;
+}
+
+a {
+  color: #00b9be;
+}

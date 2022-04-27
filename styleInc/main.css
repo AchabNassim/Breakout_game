@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #005f8c;	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Electrolize', monospace;
+	min-height: 85vh;
+	margin: 0;
+}
+
+#container {
+	min-height: 42vh;
+	padding: 15px;
+	background-color: white;
+	border: 2px solid #00b9be;
+	border-radius: 5px;
+}
+
+.button {
+	text-align: center;
+	font-size: 18px;
+	background-color: #005f8c;
+	border: none;
+	border-radius: 4px;
+	color: white;
+	margin: 10px;
+ 	width: 500px;
+  	height: 60px;
+  	padding: 20px;
+  	transition: ease-out 0.9s;
+}
+
+p {
+	text-align: center;
+	color: red;
+}
+
+.valid {
+	transition: ease-out 0.9s;
+}
+
+.valid:hover {
+	box-shadow: inset 500px 0 0 0 #00b9be;
+  color: white;
+}
+
+#logOut {
+	transition: ease-out 0.9s;
+}
+
+#logOut:hover {
+	box-shadow: inset 500px 0 0 0 black;
+  color: white;
+}
+
+#noScore:hover, #noSuggestion:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+  background-color: black;
+  color: black;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(2px, 0, 0);
+}
+}

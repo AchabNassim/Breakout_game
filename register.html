@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Register!</title>
+	<link rel="stylesheet" href="styleInc/regStyle.css">
+</head>
+<body>
+	<h2>Register<span id="mark"> !<span></h2>
+
+	<div id="container">
+		<form action="dbInc/dbRegister.php" method="POST">
+			<div>
+				<label for="name"></label>
+				<input type="text" class="input" name="name" id="name" placeholder="Please enter your name">
+				<p id="nameV"></p>
+			</div>
+			<div>
+				<label for="email"></label>
+				<input type="text" class="input" name="email" id="email" placeholder="Please enter your email">
+				<p id="emailV"></p>
+			</div>
+			<div>
+				<label for="password"></label>
+				<input type="text" class="input" name="password" id="password" placeholder="Please enter a password">
+				<p id="passwordV"></p>
+			</div>
+			<div>
+				<button type="button" id="generate" class="button">generate password</button>
+				<input type="submit" class="button" name="submit" value="register" id="register">
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="scripts/script.js" ></script>
+</body>
+</html>

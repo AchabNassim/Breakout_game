@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #005f8c;
+	display: flex;
+	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	font-family: 'Electrolize', monospace;
+ 	min-height: 80vh;
+  	margin: 0;
+}
+
+h2 {
+	color: white;
+	margin: 20px;
+	font-size: 40px;
+	letter-spacing: 1px;
+	border-bottom: 3px solid #00b9be;
+}
+#mark {
+	color: #00b9be;
+}
+
+#table {
+	width: 60%;
+	border: 3px solid #00b9be;
+	border-radius: 5px;
+}
+
+.table > :not(:first-child) {
+    border-color: #002b59;
+}
+
+
+th {
+	font-size: 26px;
+	color: white;
+}
+
+tbody tr td {
+	font-size: 22px;
+	color: white;
+}
+
+
