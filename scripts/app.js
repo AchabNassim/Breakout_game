@@ -1,10 +1,19 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+// dynamic messages;
+// const replayContainer = document.getElementById("replayContainer");
+let levelNumber = document.getElementById("levelNumber");
+// let levelReached = document.getElementById("levelReached");
+// let scoreReached = document.getElementById("scoreReached");
+
+
 
 let score = 0;
 let lives = 3;
+let secondLife = 0;
 let paused = false;
+let level = 1;
 
 const brickRowCount = 11;
 const brickColumnCount = 6;
@@ -45,6 +54,7 @@ for (let i = 0; i < brickRowCount; i++) {
     if (j >= brickColumnCount - 1){
     // if it's the last brick in the column it gets one extra life.
       brickInfo.visible = 2;
+      secondLife += 1;
       const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX;
       const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY;
       bricks[i][j] = { x, y, ...brickInfo  };
@@ -105,10 +115,16 @@ function drawScore(){
 }
 
 function drawLives(){
-  ctx.fillStyle = '#005f8c';
-  ctx.shadowColor = 'transparent';
-  ctx.font = '22px monospace';
-  ctx.fillText(`lives: ${lives}`, canvas.width - 115, 45);
+  if (lives < 2){
+    ctx.fillStyle = 'red';
+    ctx.fillText(`lives: ${lives}`, canvas.width - 115, 45);
+  } else {
+    ctx.fillStyle = '#005f8c';
+    ctx.shadowColor = 'transparent';
+    ctx.font = '22px monospace';
+    ctx.fillText(`lives: ${lives}`, canvas.width - 115, 45);
+  }
+  
 }
 
 // returns a color depending on the state of the brick.
@@ -172,12 +188,51 @@ function moveBall (){
         ) {
           ball.dy *= -1;
           brick.visible--;
-          score++;
+          
+          increaseScore();
         }
       }
     });
   });
 
+  // bottom collision
+  if (lives === 0){
+    level = 1;
+    redrawBricks(level);
+    score = 0;
+    lives = 3;
+  } else {
+    if (ball.y + ball.size > canvas.height){
+      lives--;
+    }
+  }
+}
+
+function increaseScore(){
+  score++;
+
+  if ((score % (brickColumnCount * brickRowCount + secondLife)) === 0 ){
+    level++;
+    redrawBricks(level);
+    levelNumber.textContent = level;
+    ball.x = paddle.x;
+    ball.dx *= -1;
+    ball.y = canvas.height / 2 - 30;
+  } 
+}
+
+function redrawBricks(level) {
+  secondLife = 0;
+  bricks.forEach(column => {
+    for (let i = 0; i < brickColumnCount; i++){
+      if (i >= brickColumnCount - level){
+        column[i].visible = 2;
+        secondLife++;
+      } else {
+        column[i].visible = 1;
+      }
+    }
+  });
 }
 
 // draw and animate everything
@@ -234,7 +289,6 @@ function pauseGame(e){
     togglePause();
   }
 }
-
 
 // keyboard events handlers
 
