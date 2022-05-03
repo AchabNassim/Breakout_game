@@ -9,11 +9,11 @@
 <body>
 	<h2 id="gameTitle">LEVEL <span id="levelNumber">1</span></h2>
 
-	<!-- <div id="replayContainer">
-		<h3>You reached level<span id="levelReach"></span>, your score is <span id="scoreReached"></span></h3>
-		<a href="game.html"><button id="startGame" class="button valid">Start Game</button></a>
-		<a href="game.html"><button id="startGame" class="button valid">Start Game</button></a>
-	</div> -->
+	<div id="replayContainer">
+		<h3>You reached level <span id="levelReached"></span>. your score is <span id="scoreReached"></span></h3>
+		<button id="restartButton" class="buttons" onclick="saveScore(this)">Restart The Game</button><br>
+		<button id="homeButton" class="buttons" onclick="saveScore(this)">Main Menu</button>
+	</div>
 
 	<canvas id="canvas" height="540" width="1140"></canvas>
 	<script src="scripts/app.js"></script>

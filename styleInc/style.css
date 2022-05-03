@@ -28,3 +28,44 @@ canvas {
   border: 3px solid rgba(0,43,89,0.8);
   border-radius: 7px;
 }
+
+#replayContainer {
+  min-height: 50vh;
+
+}
+
+h3 {
+  font-size: 24px;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 10px 0px 20px;
+}
+
+.buttons {
+  text-align: center;
+  font-size: 18px;
+  background-color: #005f8c;
+  border: 3px solid white;
+  color: white;
+  margin: 10px;
+  width: 440px;
+  height: 70px;
+  transition: ease-out 0.9s;
+}
+
+#restartButton:hover {
+  box-shadow: inset 500px 0 0 0 #00b9be;
+}
+
+#homeButton:hover {
+  box-shadow: inset 500px 0 0 0 rgba(0,0,0,0.85);
+}
+
+
+
+
+
+
+
+

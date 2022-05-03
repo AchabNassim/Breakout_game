@@ -2,17 +2,22 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 // dynamic messages;
-// const replayContainer = document.getElementById("replayContainer");
-let levelNumber = document.getElementById("levelNumber");
-// let levelReached = document.getElementById("levelReached");
-// let scoreReached = document.getElementById("scoreReached");
+const replayContainer = document.getElementById("replayContainer");
+replayContainer.style.display = "none";
+
+const gameTitle = document.getElementById("gameTitle")
+const levelNumber = document.getElementById("levelNumber");
+const levelReached = document.getElementById("levelReached");
+const scoreReached = document.getElementById("scoreReached");
 
 
 
 let score = 0;
+let totalScore = 0;
 let lives = 3;
 let secondLife = 0;
 let paused = false;
+let gameEnd = false;
 let level = 1;
 
 const brickRowCount = 11;
@@ -197,10 +202,7 @@ function moveBall (){
 
   // bottom collision
   if (lives === 0){
-    level = 1;
-    redrawBricks(level);
-    score = 0;
-    lives = 3;
+    gameOver();
   } else {
     if (ball.y + ball.size > canvas.height){
       lives--;
@@ -210,15 +212,28 @@ function moveBall (){
 
 function increaseScore(){
   score++;
-
-  if ((score % (brickColumnCount * brickRowCount + secondLife)) === 0 ){
+  if (score  % (brickColumnCount * brickRowCount + secondLife ) === 0 ){
     level++;
+    totalScore += score;
+    score = 0;
+    lives = 3;
     redrawBricks(level);
     levelNumber.textContent = level;
     ball.x = paddle.x;
     ball.dx *= -1;
     ball.y = canvas.height / 2 - 30;
   } 
+}
+
+function gameOver(){
+  gameEnd = true;
+  canvas.style.display = "none";
+  replayContainer.style.display = "block";
+
+  // display messages
+  gameTitle.textContent = "GAME OVER";
+  levelReached.textContent = level;
+  scoreReached.textContent = totalScore + score + "!";
 }
 
 function redrawBricks(level) {
@@ -248,13 +263,15 @@ function draw (){
 }
 
 function update (){
-  if (!paused){
+  if (!gameEnd){
+    if (!paused){
     movePaddle();
     moveBall();
     draw();
     // console.log("working");
-  }  
-  requestAnimationFrame(update);
+    }  
+    requestAnimationFrame(update);
+    }
 }
 
 update();
@@ -295,6 +312,20 @@ function pauseGame(e){
 document.addEventListener('keydown', keyDown);
 document.addEventListener('keyup', keyUp);
 document.addEventListener('keydown', pauseGame);
+
+// send the score to the database
+
+function saveScore (e){
+  let button = e.id;
+  if (button === "homeButton"){
+    window.location.href = `dbInc/dbScore.php?home=${score + totalScore}`;
+  } else if (button === "restartButton"){
+    window.location.href = `dbInc/dbScore.php?restart=${score + totalScore}`;
+  }
+}
+
+
+
 
 
 

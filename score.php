@@ -21,7 +21,7 @@
 <body>
 	<h2>Leaderboard<span id="mark"> !<span></h2>
 	<div id="table" class="container-sm">
-		<table class="table table-hover">
+		<table class="table table">
 			<thead>
 				<tr>
 					<th>Rank</th>
