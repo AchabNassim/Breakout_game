@@ -34,9 +34,9 @@ body {
 	color: white;
 	margin: 10px;
  	width: 500px;
-  height: 60px;
-  padding: 20px;
-  transition: ease-out 0.9s;
+  	height: 60px;
+  	padding: 20px;
+  	transition: ease-out 0.9s;
 }
 
 p {
@@ -59,7 +59,7 @@ p {
 
 #logOut:hover {
 	box-shadow: inset 500px 0 0 0 black;
-  color: white;
+  	color: white;
 }
 
 #noScore:hover, #noSuggestion:hover {

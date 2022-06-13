@@ -193,7 +193,6 @@ function moveBall (){
         ) {
           ball.dy *= -1;
           brick.visible--;
-          
           increaseScore();
         }
       }
