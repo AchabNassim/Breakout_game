@@ -11,7 +11,7 @@ const levelReached = document.getElementById("levelReached");
 const scoreReached = document.getElementById("scoreReached");
 
 
-
+// game stats 
 let score = 0;
 let totalScore = 0;
 let lives = 3;
@@ -19,6 +19,10 @@ let secondLife = 0;
 let paused = false;
 let gameEnd = false;
 let level = 1;
+
+// date objects
+let date = new Date();
+let timeSpent = 0;
 
 const brickRowCount = 11;
 const brickColumnCount = 6;
@@ -264,16 +268,21 @@ function draw (){
 function update (){
   if (!gameEnd){
     if (!paused){
-    movePaddle();
-    moveBall();
-    draw();
-    // console.log("working");
+      movePaddle();
+      moveBall();
+      draw();
+      // console.log("working");
     }  
     requestAnimationFrame(update);
     }
 }
 
+function updateTime(){
+  timeSpent++;
+}
+
 update();
+setInterval(updateTime, 1000);
 
 // move the paddle
 
@@ -317,9 +326,9 @@ document.addEventListener('keydown', pauseGame);
 function saveScore (e){
   let button = e.id;
   if (button === "homeButton"){
-    window.location.href = `dbInc/dbScore.php?home=${score + totalScore}`;
+    window.location.href = `dbInc/dbScore.php?home=${score + totalScore}&date=${date}&level=${level}&interval=${timeSpent}`;
   } else if (button === "restartButton"){
-    window.location.href = `dbInc/dbScore.php?restart=${score + totalScore}`;
+    window.location.href = `dbInc/dbScore.php?restart=${score + totalScore}&date=${date}&level=${level}&interval=${timeSpent}`;
   }
 }
 

@@ -19,7 +19,7 @@ noSuggestion.addEventListener("click", function (){
 noScore.addEventListener("click", function (){
 	validLog = !validLog;
 	if(!validLog){
-		loggedOut.textContent = "Please login to see the score";
+		loggedOut.textContent = "Please login to see the Leaderboard";
 	} else {
 		loggedOut.textContent = "";
 	}

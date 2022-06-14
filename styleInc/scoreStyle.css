@@ -29,9 +29,10 @@ h2 {
 }
 
 #table {
-	width: 60%;
+	width: 55%;
 	border: 3px solid #00b9be;
 	border-radius: 5px;
+	text-align: center;
 }
 
 .table > :not(:first-child) {

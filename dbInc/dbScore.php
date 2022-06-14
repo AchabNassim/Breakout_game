@@ -10,28 +10,33 @@ if (!(isset($_SESSION['user']))){
 } 
 
 $name = $_SESSION['user'];
-$previousScore = $_SESSION['score'];
+$userId = $_SESSION['userId'];
 
 if(isset($_GET['home'])){
+	$userId = $_SESSION['userId'];
 	$score = $_GET['home'];
-	if ($previousScore > $score){
-		header('location: ../index.php');
-	} else {
-		$_SESSION['score'] = $score;
-		$sql = "UPDATE user SET score ='$score' WHERE name ='$name'";
-		mysqli_query($conn, $sql);
-		header('location: ../index.php');
-	}
-} else if(isset($_GET['restart'])){
-	$score = $_GET['restart'];
-	if ($previousScore > $score){
-		header('location: ../game.html');
-	} else {
-		$_SESSION['score'] = $score;
-		$sql = "UPDATE user SET score ='$score' WHERE name ='$name' ";
-		mysqli_query($conn, $sql);
-		header('location: ../game.html');
-	}
+	$date = date('Y-m-d');
+	$level = $_GET['level'];
+	$timeSpent = $_GET['interval'];
+	$_SESSION['score'] = $score;
+
+	$sql = "INSERT INTO `game`(userId, date, timeSpent, score, reachedLevel) VALUES ('$userId','$date','$timeSpent','$score', '$level')";
+	mysqli_query($conn, $sql);
+	header('location: ../index.php');
+}
+
+else if (isset($_GET['restart'])){
+	$userId = $_SESSION['userId'];
+	$score = $_GET['home'];
+	$date = date('Y-m-d');
+	$level = $_GET['level'];
+	$timeSpent = $_GET['interval'];
+	$_SESSION['score'] = $score;
+
+	$_SESSION['score'] = $score;
+	$sql = "INSERT INTO `game`(userId, date, timespent, score, reachedLevel) VALUES ('$userId','$date','0','$score', '$level')";
+	mysqli_query($conn, $sql);
+	header('location: ../game.html');
 }
 
 

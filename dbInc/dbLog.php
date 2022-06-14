@@ -20,9 +20,9 @@ if(isset($_POST['email'])){
 
 	if($count == 1){
 		if($password == $row['password']){
+			$_SESSION['userId'] = $row["userId"];
 			$_SESSION['user'] = $row["name"];
 			$_SESSION['email'] = $row["email"];
-			$_SESSION['score'] = $row["score"];
 			header('location: ../index.php');
 		} else {
 			header('location: ../login.php?error=fail');

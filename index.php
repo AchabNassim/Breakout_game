@@ -6,9 +6,7 @@
 
 	if (isset($_SESSION['user'])){
 		$connected = true;
-		$score = $_SESSION['score'];
 	}
-
 ?>
 
 <!DOCTYPE html>
@@ -26,19 +24,14 @@
 		</div>
 		<?php if ($connected) : ?>
 			<div>
-				<a href="score.php"><button id="score" class="button valid">Score</button></a>
-			</div>
-			<div>
 				<a href="dbInc/logOut.php"><button id="logOut" class="button">Log Out</button></a>
 			</div>
 			<div>
+				<a href="leaderboard.php"><button id="score" class="button valid">Leaderboard</button></a>
+			</div>
+			<div>
 				<!-- You can only check the game suggestions if your score is bigger than 10 -->
-				<?php if($score > 10):?>
-					<a href="suggestions.php"><button id="suggestions" class="button valid">Game Suggestions</button></a>
-				<?php else: ?>
-					<button id="noSuggestion" class="button">Game Suggestions</button>
-					<p id="invalidScore"></p>
-				<?php endif; ?>
+				<a href="score.php"><button id="suggestions" class="button valid">Game Stats</button></a>
 			</div>
 
 		<!--  if the user is not connected change the interface.  -->
@@ -46,14 +39,14 @@
 		<?php else : ?>
 
 			<div>
-				<button id="noScore" class="button">Score</button>
-				<p id="loggedOut"></p>
-			</div>
-			<div>
 				<a href="login.php"><button id="login" class="button valid">Login</button></a>
 			</div>
 			<div>
-				<button id="noSuggestion" class="button" >Game Suggestions</button>
+				<button id="noScore" class="button">Leaderboard</button>
+				<p id="loggedOut"></p>
+			</div>
+			<div>
+				<button id="noSuggestion" class="button" >Game Stats</button>
 				<p id="invalidScore"></p>
 			</div>
 
