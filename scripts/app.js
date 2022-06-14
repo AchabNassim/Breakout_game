@@ -19,9 +19,6 @@ let secondLife = 0;
 let paused = false;
 let gameEnd = false;
 let level = 1;
-
-// date objects
-let date = new Date();
 let timeSpent = 0;
 
 const brickRowCount = 11;
@@ -326,9 +323,9 @@ document.addEventListener('keydown', pauseGame);
 function saveScore (e){
   let button = e.id;
   if (button === "homeButton"){
-    window.location.href = `dbInc/dbScore.php?home=${score + totalScore}&date=${date}&level=${level}&interval=${timeSpent}`;
+    window.location.href = `dbInc/dbScore.php?home=${score + totalScore}&level=${level}&interval=${timeSpent}`;
   } else if (button === "restartButton"){
-    window.location.href = `dbInc/dbScore.php?restart=${score + totalScore}&date=${date}&level=${level}&interval=${timeSpent}`;
+    window.location.href = `dbInc/dbScore.php?restart=${score + totalScore}&level=${level}&interval=${timeSpent}`;
   }
 }
 

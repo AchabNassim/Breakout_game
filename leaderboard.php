@@ -1,7 +1,8 @@
 <?php
 	include "dbInc/dbCon.php";
 
-	$sql = "SELECT * FROM user ORDER BY score DESC ";
+	$sql = "SELECT game.score, user.name, FROM game
+			INNER JOIN game ON game.userId = user.userId;";
 	$result = mysqli_query($conn,$sql);
 
 	$scoreIndex = 1;

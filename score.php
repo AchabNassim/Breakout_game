@@ -36,7 +36,7 @@
 						<tr>
 						<td><?php echo $row['gameId'] ?></td>
 						<td><?php echo $row['date'] ?></td>
-						<td><?php echo $row['timeSpent'] ?>s</td>
+						<td><?php echo $row['timeSpent'] ?></td>
 						<td><?php echo $row['score'] ?></td>
 						<td><?php echo $row['reachedLevel'] ?></td>
 					</tr>
