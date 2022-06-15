@@ -27,7 +27,7 @@ if(isset($_GET['home'])){
 
 else if (isset($_GET['restart'])){
 	$userId = $_SESSION['userId'];
-	$score = $_GET['home'];
+	$score = $_GET['restart'];
 	$date = date('Y-m-d');
 	$level = $_GET['level'];
 	$timeSpent = $_GET['interval'];

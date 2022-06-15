@@ -1,9 +1,10 @@
 <?php
 	include "dbInc/dbCon.php";
 
-	$sql = "SELECT * FROM game ORDER BY score DESC ";
+	$id = $_SESSION['userId'];
+	$sql = "SELECT * FROM game
+			INNER JOIN user ON user.userId = game.userId WHERE user.userId = '$id'";
 	$result = mysqli_query($conn,$sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +37,7 @@
 						<tr>
 						<td><?php echo $row['gameId'] ?></td>
 						<td><?php echo $row['date'] ?></td>
-						<td><?php echo $row['timeSpent'] ?></td>
+						<td><?php echo $row['timeSpent'] ?>s</td>
 						<td><?php echo $row['score'] ?></td>
 						<td><?php echo $row['reachedLevel'] ?></td>
 					</tr>

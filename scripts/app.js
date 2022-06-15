@@ -281,6 +281,19 @@ function updateTime(){
 update();
 setInterval(updateTime, 1000);
 
+// function humanReadable(seconds) {
+//   let minutes = Math.floor(seconds / 60 ) % 60;
+//   if(minutes < 10){
+//      minutes = '0' + minutes;
+//   }
+//   let s = seconds % 60;
+//   if(s < 10){
+//     s = '0' + s;
+//   }
+//   return `${minutes}:${s}`
+// }
+
+// let timer = humanReadable(timeSpent);
 // move the paddle
 
 function keyDown(e){

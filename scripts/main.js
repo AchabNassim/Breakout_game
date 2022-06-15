@@ -10,7 +10,7 @@ let validLog = true;
 noSuggestion.addEventListener("click", function (){
 	validScore = !validScore;
 	if(!validScore){
-		invalidScore.textContent = "minimum score of 10 required";
+		invalidScore.textContent = "Please login to check the stats!";
 	} else {
 		invalidScore.textContent = "";
 	}
@@ -19,7 +19,7 @@ noSuggestion.addEventListener("click", function (){
 noScore.addEventListener("click", function (){
 	validLog = !validLog;
 	if(!validLog){
-		loggedOut.textContent = "Please login to see the Leaderboard";
+		loggedOut.textContent = "Please login to see the Leaderboard!";
 	} else {
 		loggedOut.textContent = "";
 	}

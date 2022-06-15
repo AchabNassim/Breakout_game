@@ -1,8 +1,8 @@
 <?php
 	include "dbInc/dbCon.php";
 
-	$sql = "SELECT game.score, user.name, FROM game
-			INNER JOIN game ON game.userId = user.userId;";
+	$sql = "SELECT user.userId, user.name, max(game.score) FROM game
+			INNER JOIN user ON user.userId = game.userId GROUP BY game.userId ORDER BY max(game.score) DESC";
 	$result = mysqli_query($conn,$sql);
 
 	$scoreIndex = 1;
@@ -33,15 +33,13 @@
 			<tbody>
 			
 				<?php  while ($row = mysqli_fetch_assoc($result)):
-					if ($row['score'] > 0): ?>
+					?>
 						<tr>
 						<td><?php echo $scoreIndex ?></td>
 						<td><?php echo $row['name'] ?></td>
-						<td><?php echo $row['score'] ?></td>
+						<td><?php echo $row['max(game.score)'] ?></td>
 					</tr>
-						
-				<?php
-				endif;
+				<?php	
 				$scoreIndex++;
 				endwhile;
 				?>	
