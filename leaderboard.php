@@ -1,7 +1,7 @@
 <?php
 	include "dbInc/dbCon.php";
 
-	$sql = "SELECT user.userId, user.name, max(game.score) FROM game
+	$sql = "SELECT user.userId, user.name, max(game.score), game.reachedLevel FROM game
 			INNER JOIN user ON user.userId = game.userId GROUP BY game.userId ORDER BY max(game.score) DESC";
 	$result = mysqli_query($conn,$sql);
 
@@ -28,6 +28,7 @@
 					<th>Rank</th>
 					<th>Name</th>
 					<th>Score</th>
+					<th>level</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,6 +39,7 @@
 						<td><?php echo $scoreIndex ?></td>
 						<td><?php echo $row['name'] ?></td>
 						<td><?php echo $row['max(game.score)'] ?></td>
+						<td><?php echo $row['reachedLevel']?></td>
 					</tr>
 				<?php	
 				$scoreIndex++;

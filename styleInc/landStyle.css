@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Varela+Round&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Electrolize', monospace;
+    font-family: 'Montserrat', monospace;
     text-decoration: none;
     color: white;
 }
@@ -59,7 +59,7 @@ img {
 
 .spacer {
     margin-top: 80px;
-    aspect-ratio: 1440/800;
+    aspect-ratio: 1440/480;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -69,3 +69,25 @@ img {
 .layer {
     background-image: url(waveSvg.svg);
 }
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    padding-top: 50px;
+    }
+
+.howPara {
+    text-align: center;
+    font-size: 21px;
+    line-height: 29px;
+    width: 60%;
+    margin: 45px auto;
+}
+
+#about {
+    height: 60vh;
+    background-color: #002B59;
+}
+
+#
