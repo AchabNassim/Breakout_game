@@ -24,6 +24,7 @@ Ce Projet a pour but de
 
 ** Etude générale du projet :
 - Exigences fonctionelles : 
+-	Jouer
 -	Inscription
 - Exigences non fonctionnelles : 
 *	Performance
@@ -37,6 +38,7 @@ Ce Projet a pour but de
 2- Diagramme de classe : 
 3- identité visuelle : 
 - Le jeu vidéo est inspiré des jeux rétro / pixel art. C'est pour cela que j'ai choisi une palette de couleur qui combine entre les deux : 
+
 4- maquette : 
 - Landing page : 
 Sert de démonstration, permet de redirection vers le jeu et explique comment faire pour jouer.
