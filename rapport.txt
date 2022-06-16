@@ -1,0 +1,68 @@
+Rapport de Projet fil rouge: 
+Création d’un jeu web.
+specialité Développement web.
+Encadré par : Mme Imane
+Realisée par : Nassim Achab
+
+
+
+** Remerciements : 
+Tout d'abord, ce travail ne serait pas aussi riche et n'aurait pas pu voir le jour sans l'aide et l'encadrement de Mme Imane que je remercie pour la qualité de son encadrement exceptionnel, pour sa patience, sa rigueur et sa disponibilité durant notre préparation du projet fil-rouge.
+Mes remerciements s'addresse également a tous le stuff administratif et tous les formateurs pour leurs générosités et la grande patience dont ils ont su faire preuve.
+
+** Introduction : 
+Dernièrement, la qualité des jeux vidéos a diminué, on vit dans une époque ou tout ce qui intéresse les gens est l'argent. Il reste peu de gens qui créent encore des jeux de qualité par amour ou passion.
+dans le cadre de la validation de ma formation, j'ai choisi de créer un jeu vidéo qui permettra aux amateurs de jeux vidéos rétro de rejouer un de leurs jeux préféré, breakout.
+vous trouverez par la suite tous les  détails lié a la réalisation de mon projet.
+
+** Contexte du projet : 
+- Présentation de solicode :
+SOLICODE est un centre de formation solidaire et inclusif, ouvert aux jeunes motivés et intéressés par les métiers du Développement Web et Mobile. L’apprenant à SOLICODE se considère comme acteur principal tout au long de son processus d’apprentissage. C’est lui qui construit ses savoirs à travers la réalisation des projets, individuels ou par groupe, inspirés du milieu professionnel afin de favoriser une meilleure insertion au marché de travail. La formation au sein de SOLICODE est axée sur différents volets: technique, soft-skills, entreprenariat et gestion de projet. A l’issue de cette formation, les apprenants bénéficieront d’une double certification délivrée par SIMPLON et OFPPT.
+
+Présentation et objectifs du projet:
+Ce Projet a pour but de
+
+** Etude générale du projet :
+- Exigences fonctionelles : 
+-	Inscription
+- Exigences non fonctionnelles : 
+*	Performance
+*	maintenabilité
+*	accessibilité
+- Présentation de l'algorithme du jeu : 
+
+
+** Analyse et conception : 
+1- Diagramme de cas d'utilisations :
+2- Diagramme de classe : 
+3- identité visuelle : 
+- Le jeu vidéo est inspiré des jeux rétro / pixel art. C'est pour cela que j'ai choisi une palette de couleur qui combine entre les deux : 
+4- maquette : 
+- Landing page : 
+Sert de démonstration, permet de redirection vers le jeu et explique comment faire pour jouer.
+- La page d'acceuil : 
+Ici on a le choix de jouer sans s'inscrire et sans sauvegarder son score, ou de s'inscrire et de visiter la page leaderboard / game stats.
+- Page sign up :
+Permet a l'utilisateur de se connecter.
+- Page register :
+Permet a l'utilisateur de s'inscrire.
+- Leaderboard :
+Permet a l'utilisateur de visualiser le classement des joueurs.
+- Game stats :
+Permet a l'utilisateur de voir toute ces parties joué.
+
+** Réalisation : 
+1- Choix de technologies : 
+
+- Html.
+- Canvas API.
+- Css
+- Javascript.
+- Php.
+- Mysql.
+
+2- Résultat : 
+
+
+
+

@@ -60,3 +60,4 @@ function generate (){
 generateBtn.addEventListener("click", generate);
 submitBtn.addEventListener("click", validateForm);
 
+
