@@ -94,3 +94,26 @@ a:hover {
     text-decoration: underline;
 }
 
+@media only screen and (max-width: 500px) {
+    ul > li {
+        display:    none;
+    }
+    .title {
+        font-size:  20px;
+        padding:    35px;
+    }
+    #about {
+        height:     85vh;
+    }
+    p {
+        font-size:  14px !important;
+    }
+    .howPara {
+        margin:     0px auto;
+    }
+    #button {
+    width: 130px;
+    height: 30px;
+    font-size: 14px;
+    }
+}
