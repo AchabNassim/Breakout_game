@@ -50,4 +50,16 @@ tbody tr td {
 	color: white;
 }
 
+a {
+	position: relative;
+	margin-right: 580px;
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: white;
+}
+
 

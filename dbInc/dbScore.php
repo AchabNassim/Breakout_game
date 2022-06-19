@@ -34,7 +34,7 @@ else if (isset($_GET['restart'])){
 	$_SESSION['score'] = $score;
 
 	$_SESSION['score'] = $score;
-	$sql = "INSERT INTO `game`(userId, date, timespent, score, reachedLevel) VALUES ('$userId','$date','0','$score', '$level')";
+	$sql = "INSERT INTO `game`(userId, date, timespent, score, reachedLevel) VALUES ('$userId','$date','$timeSpent','$score', '$level')";
 	mysqli_query($conn, $sql);
 	header('location: ../game.html');
 }

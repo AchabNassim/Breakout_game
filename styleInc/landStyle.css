@@ -59,7 +59,7 @@ img {
 
 .spacer {
     margin-top: 80px;
-    aspect-ratio: 1440/480;
+    aspect-ratio: 1440/440;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -86,7 +86,11 @@ img {
 }
 
 #about {
-    height: 60vh;
+    height: 47vh;
     background-color: #002B59;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 

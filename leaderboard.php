@@ -21,6 +21,7 @@
 </head>
 <body>
 	<h2>Leaderboard<span id="mark"> !<span></h2>
+	<a href="index.php"><p>← Home</p></a>
 	<div id="table" class="container-sm">
 		<table class="table table">
 			<thead>

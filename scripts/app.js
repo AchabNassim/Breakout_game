@@ -140,7 +140,7 @@ function colorCheck(brick){
   } else if (brick.visible == 1){
     return 'rgba(0,95,140,0.6)';
   } else {
-    return 'transparent'
+    return 'transparent';
   }
 }
 
@@ -210,18 +210,23 @@ function moveBall (){
   }
 }
 
+function levelUp(){
+  level++;
+  totalScore += score;
+  score = 0;
+  lives = 3;
+  redrawBricks(level);
+  levelNumber.textContent = level;
+  ball.x = canvas.width / 2;
+  ball.y = canvas.height / 2 - 30;
+  paddle.x = canvas.width / 2 - 70;
+  paddle.y = canvas.height - 30;
+}
+
 function increaseScore(){
   score++;
   if (score  % (brickColumnCount * brickRowCount + secondLife ) === 0 ){
-    level++;
-    totalScore += score;
-    score = 0;
-    lives = 3;
-    redrawBricks(level);
-    levelNumber.textContent = level;
-    ball.x = paddle.x;
-    ball.dx *= -1;
-    ball.y = canvas.height / 2 - 30;
+    levelUp();
   } 
 }
 
@@ -328,19 +333,4 @@ function saveScore (e){
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(bricks);
